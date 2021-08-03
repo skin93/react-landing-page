@@ -3,7 +3,7 @@ import { InfoType } from '../../types/InfoType';
 
 export const InfoContainer = styled.div<InfoType>`
   color: #fff;
-  background: ${(props) => (props.lightBg ? '#f9f9f9' : '010606')};
+  background: ${(props) => (props.lightBg ? '#f9f9f9' : '#010606')};
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;

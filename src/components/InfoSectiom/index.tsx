@@ -28,6 +28,9 @@ const InfoSection: FC<InfoType> = ({
   buttonLabel,
   img,
   alt,
+  primary,
+  dark,
+  dark2,
 }) => {
   return (
     <>
@@ -40,7 +43,17 @@ const InfoSection: FC<InfoType> = ({
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <Button to='home'>{buttonLabel}</Button>
+                  <Button
+                    to='home'
+                    smooth
+                    duration={500}
+                    spy
+                    offset={-80}
+                    primary={primary ? true : false}
+                    dark={dark ? true : false}
+                    dark2={dark2 ? true : false}>
+                    {buttonLabel}
+                  </Button>
                 </BtnWrap>
               </TextWrapper>
             </Column1>
