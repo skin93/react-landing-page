@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   MobileIcon,
   Nav,
@@ -11,14 +11,15 @@ import {
   NavMenu,
 } from './Navbar.style';
 import { FaBars } from 'react-icons/fa';
+import { NavbarType } from '../../types/NavbarType';
 
-const Navbar = () => {
+const Navbar: FC<NavbarType> = ({ toggle }) => {
   return (
     <>
       <Nav>
         <NavbarContainer>
           <NavLogo to='/'>Landing</NavLogo>
-          <MobileIcon>
+          <MobileIcon onClick={toggle}>
             <FaBars color='white' />
           </MobileIcon>
           <NavMenu>
