@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { InfoType } from '../../types/InfoType';
 import { Button } from '../shared/Button.style';
 import {
   BtnWrap,
@@ -15,25 +16,37 @@ import {
   TopLine,
 } from './InfoSection.style';
 
-const InfoSection = () => {
+const InfoSection: FC<InfoType> = ({
+  lightBg,
+  id,
+  imgStart,
+  topLine,
+  lightText,
+  headline,
+  darkText,
+  description,
+  buttonLabel,
+  img,
+  alt,
+}) => {
   return (
     <>
-      <InfoContainer>
+      <InfoContainer lightBg={lightBg} id={id}>
         <InfoWrapper>
-          <InfoRow>
+          <InfoRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
-                <TopLine>Top Line</TopLine>
-                <Heading>Heading</Heading>
-                <Subtitle>Subtitle</Subtitle>
+                <TopLine>{topLine}</TopLine>
+                <Heading lightText={lightText}>{headline}</Heading>
+                <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <Button to='home'>Button</Button>
+                  <Button to='home'>{buttonLabel}</Button>
                 </BtnWrap>
               </TextWrapper>
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img />
+                <Img src={img} alt={alt} />
               </ImgWrap>
             </Column2>
           </InfoRow>
