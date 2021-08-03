@@ -11,6 +11,7 @@ export type InfoType = {
   img?: string;
   alt?: string;
   dark?: boolean;
+  dark2?: boolean;
   primary?: boolean;
   darkText?: boolean;
 };
