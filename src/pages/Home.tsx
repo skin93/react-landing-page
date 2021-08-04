@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import InfoSection from '../components/InfoSectiom';
 import {
@@ -10,7 +11,7 @@ import Navbar from '../components/Navbar';
 import Services from '../components/Services';
 import Sidebar from '../components/Sidebar';
 
-const Home = () => {
+const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = useCallback(() => {
     setIsOpen(!isOpen);
@@ -25,8 +26,9 @@ const Home = () => {
       <InfoSection {...homeObjTwo} />
       <Services />
       <InfoSection {...homeObjThree} />
+      <Footer />
     </>
   );
 };
 
-export default Home;
+export default HomePage;
