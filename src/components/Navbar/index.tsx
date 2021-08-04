@@ -1,4 +1,5 @@
 import React, { FC, useState, useEffect, useCallback } from 'react';
+import { animateScroll as scroll } from 'react-scroll';
 import {
   MobileIcon,
   Nav,
@@ -24,13 +25,17 @@ const Navbar: FC<NavbarType> = ({ toggle }) => {
     }
   }, []);
 
+  const toggleHome = useCallback(() => {
+    scroll.scrollToTop();
+  }, []);
+
   useEffect(() => {
     window.addEventListener('scroll', changeNav);
   }, [changeNav]);
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
-        <Nav scrollNav={scrollNav}>
+        <Nav onClick={toggleHome} scrollNav={scrollNav}>
           <NavbarContainer>
             <NavLogo to='/'>Landing</NavLogo>
             <MobileIcon onClick={toggle}>
@@ -38,16 +43,24 @@ const Navbar: FC<NavbarType> = ({ toggle }) => {
             </MobileIcon>
             <NavMenu>
               <NavItem>
-                <NavLinks to='about'>About</NavLinks>
+                <NavLinks to='about' smooth duration={500} spy offset={-80}>
+                  About
+                </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to='discover'>Discover</NavLinks>
+                <NavLinks to='discover' smooth duration={500} spy offset={-80}>
+                  Discover
+                </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to='services'>Services</NavLinks>
+                <NavLinks to='services' smooth duration={500} spy offset={-80}>
+                  Services
+                </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to='signup'>Sign Up</NavLinks>
+                <NavLinks to='signup' smooth duration={500} spy offset={-80}>
+                  Sign Up
+                </NavLinks>
               </NavItem>
             </NavMenu>
             <NavBtn>

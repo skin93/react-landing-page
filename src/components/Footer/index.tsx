@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   FaFacebook,
   FaInstagram,
@@ -6,6 +6,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from 'react-icons/fa';
+import { animateScroll as scroll } from 'react-scroll';
 import {
   FooterContainer,
   FooterLink,
@@ -23,6 +24,9 @@ import {
 } from './Footer.style';
 
 const Footer = () => {
+  const toggleHome = useCallback(() => {
+    scroll.scrollToTop();
+  }, []);
   return (
     <FooterContainer>
       <FooterWrapper>
@@ -63,7 +67,9 @@ const Footer = () => {
         </FooterLinksContainer>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to='/'>Landing</SocialLogo>
+            <SocialLogo to='/' onClick={toggleHome}>
+              Landing
+            </SocialLogo>
             <WebsiteRights>
               Landing &copy {new Date().getFullYear()} All rights reserved.
             </WebsiteRights>
