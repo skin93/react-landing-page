@@ -1,7 +1,7 @@
 export type ButtonType = {
-  primary?: boolean;
-  dark?: boolean;
-  dark2?: boolean;
+  primary?: string;
+  dark?: string;
+  dark2?: string;
   big?: boolean;
   fontBig?: boolean;
 };

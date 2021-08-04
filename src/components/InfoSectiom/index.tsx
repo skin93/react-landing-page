@@ -49,9 +49,9 @@ const InfoSection: FC<InfoType> = ({
                     duration={500}
                     spy
                     offset={-80}
-                    primary={primary ? true : false}
-                    dark={dark ? true : false}
-                    dark2={dark2 ? true : false}>
+                    primary={primary ? 'true' : 'false'}
+                    dark={dark ? 'true' : 'false'}
+                    dark2={dark2 ? 'true' : 'false'}>
                     {buttonLabel}
                   </Button>
                 </BtnWrap>
