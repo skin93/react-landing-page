@@ -47,7 +47,7 @@ export const homeObjThree = {
   headline: 'Creating an account is extremely easy',
   description:
     "Get everythig set up and ready in under 10 minutes. All you need to do is add your information and you're ready to go",
-  buttonLabel: 'Starting Now',
+  buttonLabel: 'Start Now',
   imgStart: false,
   img: Information,
   alt: 'Paper',
